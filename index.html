@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/CSS/output.css">
+    <title>EasyIMG</title>
+</head>
+
+<body class="h-screen  " style="background-image: url('./assets/IMAGENS/Background.jpg');">
+    <header class="text-center py-4">
+        <h1 class="text-white font-bold text-6xl">EasyIMG</h1>
+    </header>
+    <main class="h-full grid grid-cols-1 lg:grid-cols-2">
+
+        <div class="h-full flex justify-center items-center">
+            <form action="#" class="flex flex-col gap-5 border border-gray-800 rounded-lg shadow-2xl py-10 px-20">
+                <input type="number" placeholder="Largura" class="border-b-2 border-r-2 border-black rounded-md p-2 "
+                    id="largura">
+                <input type="number" placeholder="Altura" class="border-b-2 border-r-2 border-black rounded-md p-2 "
+                    id="altura">
+                <div>
+                    <input type="checkbox" name="blur" id="check__blur">
+                    <label for="check__blur" class="text-white font-bold">Imagem desfocada</label>
+                </div>
+                <input type="button" value="Buscar" id="botao__procura" class="botao__padrao ">
+                <input type="button" value="Limpar" id="botao__limpar" class="botao__padrao ">
+            </form>
+        </div>
+        <div class="h-full flex flex-col gap-4 justify-center items-center">
+            <h2 class=" text-white text-4xl">Preview:</h2>
+
+            <img src="./assets/IMAGENS/img_placeholder.jpg" alt="" id="img__procurada" class="max-h-64 ">
+        </div>
+    </main>
+</body>
+<script src="./assets/JS/script.js"></script>
+
+</html>
