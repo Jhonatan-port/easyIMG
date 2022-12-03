@@ -1,6 +1,6 @@
 # easyIMG
 
-Projeto criado com objetivo de gerar imagens aleatorias de acordo com a especificação de tamanho que o usuario definir, tambem sendo possivel gerar uma imagem em preto e branco e desfocada, ou ambas as opções em conjunto.
+Projeto criado com objetivo de gerar imagens aleatorias de acordo com a especificação de tamanho que o usuario definir, tambem sendo possivel gerar uma imagem em preto e branco ou desfocada, ou ambas as opções em conjunto.
 
 Projeto desenvolvido utilizando HTML e o framework Tailwind CSS para o front end. Para backend foi utilizado Javascript
 
