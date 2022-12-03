@@ -10,7 +10,7 @@
 </head>
 
 <body class="h-screen  " style="background-image: url('./assets/IMAGENS/Background.jpg');">
-    <header class="text-center py-4">
+    <header class="text-center sm:py-4 md:py-2 ">
         <h1 class="text-white font-bold text-6xl">EasyIMG</h1>
     </header>
     <main class="h-full grid grid-cols-1 lg:grid-cols-2">
@@ -24,6 +24,10 @@
                 <div>
                     <input type="checkbox" name="blur" id="check__blur">
                     <label for="check__blur" class="text-white font-bold">Imagem desfocada</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="grayscale" id="check__grayscale">
+                    <label for="check__grayscale" class="text-white font-bold">Imagem Preto e branco</label>
                 </div>
                 <input type="button" value="Buscar" id="botao__procura" class="botao__padrao ">
                 <input type="button" value="Limpar" id="botao__limpar" class="botao__padrao ">
