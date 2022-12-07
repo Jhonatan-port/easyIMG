@@ -8,7 +8,6 @@ var btnDownload = document.getElementById("btn__download")
 
 
 
-
 btnProcura.addEventListener("click", function () {
 
     if (document.getElementById("largura").value == '') {
@@ -48,42 +47,40 @@ function triggerDownload(url) {
     const link = document.createElement('a')
     link.download = ''
     link.href = url
-
+  
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
   }
   
-  const button = document.getElementById('btn__download')
-  const url = img.src
-
-  fetch(url)
+  function storeImage(url) {
+    fetch(url)
       .then(response => response.blob())
       .then(blob => {
         var objectURL = URL.createObjectURL(blob);
         img.src = objectURL
       })
-
-  button.addEventListener('click', () => {
+  }
+  
+  btnDownload.addEventListener('click', () => {
     triggerDownload(img.src)
   })
-
 //Funções
 function buscaImagem(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura
-    img.src = urlImg
+    storeImage(urlImg)
 }
 function buscaImagemBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?blur=5"
-    img.src = urlImg
+    storeImage(urlImg)
 }
 function buscaImagemPretoEBranco(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale"
-    img.src = urlImg
+    storeImage(urlImg)
 }
 function buscaImagemPretoEBrancoBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale&blur=5"
-    img.src = urlImg
+    storeImage(urlImg)
 }
 
 
