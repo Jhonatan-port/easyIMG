@@ -3,7 +3,8 @@ const btnProcura = document.getElementById("botao__procura");
 const btnLimpa = document.getElementById("botao__limpar");
 var divImg = document.getElementById("img__solicitada");
 var checkBlur = document.getElementById("check__blur");
-var checkGray = document.getElementById("check__grayscale")
+var checkGray = document.getElementById("check__grayscale");
+var btnDownload = document.getElementById("btn__download")
 
 
 
@@ -25,6 +26,8 @@ btnProcura.addEventListener("click", function () {
         var altura = document.getElementById("altura");
     }
 
+
+
     if (!checkBlur.checked && !checkGray.checked) {
         buscaImagem(largura.value, altura.value)
     } else if (checkBlur.checked && !checkGray.checked) {
@@ -40,6 +43,30 @@ btnLimpa.addEventListener("click", function (evento) {
     img.src = "./assets/IMAGENS/img_placeholder.jpg"
 
 })
+
+function triggerDownload(url) {
+    const link = document.createElement('a')
+    link.download = ''
+    link.href = url
+
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+  
+  const button = document.getElementById('btn__download')
+  const url = img.src
+
+  fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        var objectURL = URL.createObjectURL(blob);
+        img.src = objectURL
+      })
+
+  button.addEventListener('click', () => {
+    triggerDownload(img.src)
+  })
 
 //Funções
 function buscaImagem(largura, altura) {
@@ -58,3 +85,6 @@ function buscaImagemPretoEBrancoBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale&blur=5"
     img.src = urlImg
 }
+
+
+
