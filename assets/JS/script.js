@@ -12,21 +12,13 @@ btnProcura.addEventListener("click", function(evento){
     var largura = document.getElementById("largura");
     var altura = document.getElementById("altura");
     if(!checkBlur.checked && !checkGray.checked){
-    urlImg = "https://picsum.photos/"+ largura.value +"/"+ altura.value
-    console.log(urlImg);
-    img.src = urlImg
+        buscaimagem(largura.value, altura.value)
     }else if (checkBlur.checked && !checkGray.checked){
-        urlImg = "https://picsum.photos/"+ largura.value +"/"+ altura.value + "?blur=5"
-        console.log(urlImg);
-        img.src = urlImg
+        buscaImagemBlur(largura.value, altura.value)
     }else if (!checkBlur.checked && checkGray.checked){
-        urlImg = "https://picsum.photos/"+ largura.value +"/"+ altura.value + "?grayscale"
-        console.log(urlImg);
-        img.src = urlImg
+        buscaimagemPretoEBranco(largura.value, altura.value)
     }else {
-        urlImg = "https://picsum.photos/"+ largura.value +"/"+ altura.value + "?grayscale&blur=5"
-        console.log(urlImg);
-        img.src = urlImg
+        buscaimagemPretoEBrancoBlur(largura.value, altura.value)   
     }
 })
 
@@ -34,3 +26,21 @@ btnLimpa.addEventListener("click", function(evento){
     img.src="./assets/IMAGENS/img_placeholder.jpg"
     
 })
+
+//Funções
+function buscaimagem(largura, altura){
+    urlImg = "https://picsum.photos/"+ largura +"/"+ altura
+    img.src = urlImg
+}
+function buscaImagemBlur(largura, altura){
+    urlImg = "https://picsum.photos/"+ largura +"/"+ altura + "?blur=5"
+    img.src = urlImg
+}
+function buscaimagemPretoEBranco(largura, altura){
+    urlImg = "https://picsum.photos/"+ largura +"/"+ altura + "?grayscale"
+    img.src = urlImg
+}
+function buscaimagemPretoEBrancoBlur(largura, altura){
+    urlImg = "https://picsum.photos/"+ largura +"/"+ altura + "?grayscale&blur=5"
+    img.src = urlImg
+}

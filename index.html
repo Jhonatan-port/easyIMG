@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/CSS/output.css">
+    <link rel="icon" type="image/png" href="./icon.png">
     <title>EasyIMG</title>
 </head>
 
-<body class="h-screen  " style="background-image: url('./assets/IMAGENS/Background.jpg');">
-    <header class="text-center sm:py-4 md:py-2 ">
-        <h1 class="text-white font-bold text-6xl">EasyIMG</h1>
+<body class="h-screen flex flex-col " style="background-image: url('./assets/IMAGENS/Background.jpg');">
+    <header class="text-center my-2  ">
+        <h1 class="text-white font-bold text-3xl lg:text-6xl">EasyIMG</h1>
     </header>
-    <main class="h-full grid grid-cols-1 lg:grid-cols-2">
+    <main class="mb-3 lg:mb-0 lg:h-4/5 grid grid-cols-1 lg:grid-cols-2">
 
         <div class="h-full flex justify-center items-center">
             <form action="#" class="flex flex-col gap-5 border border-gray-800 rounded-lg shadow-2xl py-10 px-20">
@@ -35,10 +36,14 @@
         </div>
         <div class="h-full flex flex-col gap-4 justify-center items-center">
             <h2 class=" text-white text-4xl">Preview:</h2>
-
             <img src="./assets/IMAGENS/img_placeholder.jpg" alt="" id="img__procurada" class="max-h-64 ">
+            <a href="#" class="text-lg p-2 text-white bg-slate-500 rounded-md hover:bg-slate-800 " >Download</a>
         </div>
+
     </main>
+    <footer class=" bg-gradient-to-br from-slate-500 to-slate-700 flex flex-grow  justify-center items-center">
+        <p class="text-white">Pagina desenvolvida por Jhonatan dos Santos</p>
+    </footer>
 </body>
 <script src="./assets/JS/script.js"></script>
 
