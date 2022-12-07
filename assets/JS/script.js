@@ -9,8 +9,20 @@ var checkGray = document.getElementById("check__grayscale")
 
 
 btnProcura.addEventListener("click", function (evento) {
-    var largura = document.getElementById("largura");
-    var altura = document.getElementById("altura");
+
+    if (document.getElementById("largura").textContent == '') {
+        document.getElementById("largura").value = '500'
+        var largura = document.getElementById("largura");
+    } else {
+        var largura = document.getElementById("largura");
+    }
+
+    if (document.getElementById("altura").textContent == '') {
+        document.getElementById("altura").value = '500'
+        var altura = document.getElementById("largura");
+    } else {
+        var altura = document.getElementById("altura");
+    }
 
     if (!checkBlur.checked && !checkGray.checked) {
         buscaimagem(largura.value, altura.value)
