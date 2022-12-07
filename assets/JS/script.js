@@ -8,16 +8,17 @@ var checkGray = document.getElementById("check__grayscale")
 
 
 
-btnProcura.addEventListener("click", function (evento) {
+btnProcura.addEventListener("click", function () {
 
-    if (document.getElementById("largura").textContent == '') {
+    if (document.getElementById("largura").value == '') {
+        console.log(document.getElementById("largura").value);
         document.getElementById("largura").value = '500'
         var largura = document.getElementById("largura");
     } else {
         var largura = document.getElementById("largura");
     }
 
-    if (document.getElementById("altura").textContent == '') {
+    if (document.getElementById("altura").value == '') {
         document.getElementById("altura").value = '500'
         var altura = document.getElementById("largura");
     } else {
@@ -25,13 +26,13 @@ btnProcura.addEventListener("click", function (evento) {
     }
 
     if (!checkBlur.checked && !checkGray.checked) {
-        buscaimagem(largura.value, altura.value)
+        buscaImagem(largura.value, altura.value)
     } else if (checkBlur.checked && !checkGray.checked) {
         buscaImagemBlur(largura.value, altura.value)
     } else if (!checkBlur.checked && checkGray.checked) {
-        buscaimagemPretoEBranco(largura.value, altura.value)
+        buscaImagemPretoEBranco(largura.value, altura.value)
     } else {
-        buscaimagemPretoEBrancoBlur(largura.value, altura.value)
+        buscaImagemPretoEBrancoBlur(largura.value, altura.value)
     }
 })
 
@@ -41,7 +42,7 @@ btnLimpa.addEventListener("click", function (evento) {
 })
 
 //Funções
-function buscaimagem(largura, altura) {
+function buscaImagem(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura
     img.src = urlImg
 }
@@ -49,11 +50,11 @@ function buscaImagemBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?blur=5"
     img.src = urlImg
 }
-function buscaimagemPretoEBranco(largura, altura) {
+function buscaImagemPretoEBranco(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale"
     img.src = urlImg
 }
-function buscaimagemPretoEBrancoBlur(largura, altura) {
+function buscaImagemPretoEBrancoBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale&blur=5"
     img.src = urlImg
 }
