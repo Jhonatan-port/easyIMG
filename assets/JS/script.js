@@ -8,7 +8,7 @@ const btnDownload = document.getElementById("btn__download")
 
 
 
-btnProcura.addEventListener("click", function () {
+btnProcura.addEventListener("click", () => {
 
     if (document.getElementById("largura").value == '') {
         document.getElementById("largura").value = '500'
@@ -39,7 +39,7 @@ btnProcura.addEventListener("click", function () {
     btnDownload.classList.remove("hidden")
 })
 
-btnLimpa.addEventListener("click", function (evento) {
+btnLimpa.addEventListener("click",  () => {
     img.src = "./assets/IMAGENS/img_placeholder.jpg"
     btnDownload.classList.add("hidden")
 })

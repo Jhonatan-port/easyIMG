@@ -14,7 +14,7 @@
     <header class="text-center my-2  ">
         <h1 class="text-white font-bold text-3xl lg:text-6xl">EasyIMG</h1>
     </header>
-    <main class="mb-3 lg:mb-0 lg:h-4/5 grid grid-cols-1 lg:grid-cols-2">
+    <main class="main__reponsividade">
 
         <div class="h-full flex justify-center items-center">
             <form action="#" class="flex flex-col gap-5 border border-gray-800 rounded-lg shadow-2xl py-10 px-20">
@@ -31,18 +31,18 @@
                     <input type="checkbox" name="grayscale" id="check__grayscale">
                     <label for="check__grayscale" class="text-white font-bold">Imagem Preto e branco</label>
                 </div>
-                <input type="button" value="Buscar" id="botao__procura" class="botao__padrao ">
-                <input type="button" value="Limpar" id="botao__limpar" class="botao__padrao ">
+                <input type="button" value="Buscar" id="botao__procura" class="btn__padrao ">
+                <input type="button" value="Limpar" id="botao__limpar" class="btn__padrao ">
             </form>
         </div>
         <div class="h-full flex flex-col gap-4 justify-center items-center">
             <h2 class=" text-white text-4xl">Preview:</h2>
             <img src="./assets/IMAGENS/img_placeholder.jpg" alt="" id="img__procurada" class="max-h-64 ">
-            <button id="btn__download" class="text-lg p-2 text-black bg-gray-300 rounded-md transition-all hover:bg-gray-800 hover:text-white hidden">Download</button>
+            <button id="btn__download" class="btn__download hidden">Download</button>
         </div>
 
     </main>
-    <footer class=" bg-gradient-to-br from-slate-500 to-slate-700 flex flex-col flex-grow  justify-center items-center">
+    <footer class="footer__bg">
 
         <p class="text-white text-center">Pagina desenvolvida por: <br> Jhonatan dos Santos</p>
         <div class="flex gap-4">

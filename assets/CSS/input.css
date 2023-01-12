@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.botao__padrao{
+.btn__padrao{
     @apply bg-gray-300  py-2 font-bold text-lg transition-all  hover:text-white hover:bg-gray-800 hover:cursor-pointer
 }
 
 .input__padrao{
     @apply  border-b-2 border-r-2 border-black rounded-md p-2  
+}
+
+.btn__download{
+    @apply text-lg p-2 text-black bg-gray-300 rounded-md transition-all hover:bg-gray-800 hover:text-white
+}
+
+.footer__bg{
+    @apply bg-gradient-to-br from-slate-500 to-slate-700 flex flex-col flex-grow  justify-center items-center
+}
+.main__reponsividade{
+    @apply mb-3 lg:mb-0 lg:h-4/5 grid grid-cols-1 lg:grid-cols-2
 }
