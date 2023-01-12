@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .botao__padrao{
-    @apply bg-gray-300  py-2 font-bold text-lg transition-all duration-150 hover:text-white hover:bg-gray-800 hover:cursor-pointer
+    @apply bg-gray-300  py-2 font-bold text-lg transition-all  hover:text-white hover:bg-gray-800 hover:cursor-pointer
 }
 
 .input__padrao{

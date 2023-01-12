@@ -11,7 +11,6 @@ const btnDownload = document.getElementById("btn__download")
 btnProcura.addEventListener("click", function () {
 
     if (document.getElementById("largura").value == '') {
-        console.log(document.getElementById("largura").value);
         document.getElementById("largura").value = '500'
         var largura = document.getElementById("largura");
     } else {
@@ -36,17 +35,37 @@ btnProcura.addEventListener("click", function () {
     } else {
         buscaImagemPretoEBrancoBlur(largura.value, altura.value)
     }
+
+    btnDownload.classList.remove("hidden")
 })
 
 btnLimpa.addEventListener("click", function (evento) {
     img.src = "./assets/IMAGENS/img_placeholder.jpg"
-
+    btnDownload.classList.add("hidden")
 })
 
 btnDownload.addEventListener('click', () => {
-    triggerDownload(img.src)
+    triggerDownload(img.src, largura.value, altura.value)
 })
-//Funções
+function triggerDownload(url,largura, altura) {
+    const link = document.createElement('a')
+    link.download = `Imagem ${largura} X ${altura}`
+    link.href = url
+
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+}
+
+function storeImage(url) {
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            var objectURL = URL.createObjectURL(blob);
+            img.src = objectURL
+        })
+}
+
 function buscaImagem(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura
     storeImage(urlImg)
@@ -63,23 +82,8 @@ function buscaImagemPretoEBrancoBlur(largura, altura) {
     urlImg = "https://picsum.photos/" + largura + "/" + altura + "?grayscale&blur=5"
     storeImage(urlImg)
 }
-function triggerDownload(url) {
-    const link = document.createElement('a')
-    link.download = ''
-    link.href = url
 
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-}
-function storeImage(url) {
-    fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-            var objectURL = URL.createObjectURL(blob);
-            img.src = objectURL
-        })
-}
+
 
 
 
